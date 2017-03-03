@@ -81,17 +81,7 @@ app.controller("homeCtrl", function ($scope, $http) {
         $http.post("/Encryption/Encrypt", $scope.encrypt)
             .success(function (response) {
                 $scope.encrypOutput = response;
-            });
-        //$http({
-        //    url: "/Encryption/Encrypt",
-        //    method: "POST",
-        //    params: {
-        //        encrypt: $scope.encrypt
-        //    }
-        //}).success(function (data) {                        
-        //    $scope.encrypOutput = data;
-        //})
-
+            });       
     }
     $scope.mydecrypt = function () {
         console.log($scope.objdecrypt);
