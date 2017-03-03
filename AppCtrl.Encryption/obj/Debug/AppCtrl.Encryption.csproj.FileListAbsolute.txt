@@ -1,0 +1,21 @@
+D:\sample\แก้ใหม่\PX57GBX02-02 - Globlex - Gold Internet Trading System P.2\Application\GITS_AppCtrl\AppCtrl.Encryption\bin\Debug\AppCtrl.Encryption.dll
+D:\sample\แก้ใหม่\PX57GBX02-02 - Globlex - Gold Internet Trading System P.2\Application\GITS_AppCtrl\AppCtrl.Encryption\bin\Debug\AppCtrl.Encryption.pdb
+D:\sample\แก้ใหม่\PX57GBX02-02 - Globlex - Gold Internet Trading System P.2\Application\GITS_AppCtrl\AppCtrl.Encryption\bin\Debug\GITs.cnxdll2.dll
+D:\sample\แก้ใหม่\PX57GBX02-02 - Globlex - Gold Internet Trading System P.2\Application\GITS_AppCtrl\AppCtrl.Encryption\bin\Debug\GITs.cnxdll2.pdb
+D:\sample\แก้ใหม่\PX57GBX02-02 - Globlex - Gold Internet Trading System P.2\Application\GITS_AppCtrl\AppCtrl.Encryption\obj\Debug\AppCtrl.Encryption.csprojResolveAssemblyReference.cache
+D:\sample\แก้ใหม่\PX57GBX02-02 - Globlex - Gold Internet Trading System P.2\Application\GITS_AppCtrl\AppCtrl.Encryption\obj\Debug\AppCtrl.Encryption.dll
+D:\sample\แก้ใหม่\PX57GBX02-02 - Globlex - Gold Internet Trading System P.2\Application\GITS_AppCtrl\AppCtrl.Encryption\obj\Debug\AppCtrl.Encryption.pdb
+D:\sample\แก้ใหม่อีกรอบ\Application\AppCtrl.Encryption\bin\Debug\AppCtrl.Encryption.dll
+D:\sample\แก้ใหม่อีกรอบ\Application\AppCtrl.Encryption\bin\Debug\AppCtrl.Encryption.pdb
+D:\sample\แก้ใหม่อีกรอบ\Application\AppCtrl.Encryption\obj\Debug\AppCtrl.Encryption.dll
+D:\sample\แก้ใหม่อีกรอบ\Application\AppCtrl.Encryption\obj\Debug\AppCtrl.Encryption.pdb
+E:\mini project\c#\AppCtrl\AppCtrl.Encryption\bin\Debug\AppCtrl.Encryption.dll
+E:\mini project\c#\AppCtrl\AppCtrl.Encryption\bin\Debug\AppCtrl.Encryption.pdb
+E:\mini project\c#\AppCtrl\AppCtrl.Encryption\obj\Debug\AppCtrl.Encryption.dll
+E:\mini project\c#\AppCtrl\AppCtrl.Encryption\obj\Debug\AppCtrl.Encryption.pdb
+E:\mini project\c#\AppCtrl\AppCtrl.Encryption\obj\Debug\AppCtrl.Encryption.csprojResolveAssemblyReference.cache
+D:\Projects\Internal\AppCtrl\AppCtrl.Encryption\bin\Debug\AppCtrl.Encryption.dll
+D:\Projects\Internal\AppCtrl\AppCtrl.Encryption\bin\Debug\AppCtrl.Encryption.pdb
+D:\Projects\Internal\AppCtrl\AppCtrl.Encryption\obj\Debug\AppCtrl.Encryption.csprojResolveAssemblyReference.cache
+D:\Projects\Internal\AppCtrl\AppCtrl.Encryption\obj\Debug\AppCtrl.Encryption.dll
+D:\Projects\Internal\AppCtrl\AppCtrl.Encryption\obj\Debug\AppCtrl.Encryption.pdb
