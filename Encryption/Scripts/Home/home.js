@@ -35,7 +35,7 @@ app.controller("homeCtrl", function ($scope, $http) {
             id: 1,
             name: 'GITS',
             key: "Z2J4YXBwY3Q=",
-            vector: "vector AppCtrl"
+            vector: "Z2l0czIwMDk="
         },
         {
             id : 2,
@@ -89,6 +89,13 @@ app.controller("homeCtrl", function ($scope, $http) {
             .success(function (response) {
                 $scope.decrypOutput = response;
             });
+    }
+
+    $scope.isFalse = function () {        
+        return $scope.encrypt.key == null ? true : false;
+    }
+    $scope.dataIsNull = function () {
+        return $scope.encrypt.Data == null ? true : false;
     }
 })
 

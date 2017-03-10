@@ -2,25 +2,45 @@
 <div class="container" ng-app="App" ng-controller="homeCtrl">
 
     <div class="row ">
-        <div class="col-lg-3 col-sm-12">
-            <div class="row col-sm-12">
-                <div class="dropdown">
-                    <select class="form-control" ng-model=" encrypt" ng-options="x.name for x in pj">
-                        <option value="">---Please select---</option>
-                    </select>
+        <form name="encryptForm">
+            <div class="col-lg-3 col-sm-12">
+
+                <div class="input-group" style="margin-bottom:5px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <div class="dropdown">
+                        <select class="form-control" name="ddl_pj" ng-model="encrypt" ng-options="x.name for x in pj" required>
+                            <option value="">---Please select---</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group" style="margin-bottom:5px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" name="key" value="{{encrypt.key}}" class="form-control" disabled required />
+                </div>
+                <div class="input-group" style="margin-bottom:5px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" name="vector" value="{{encrypt.vector}}" class="form-control" disabled required />
+                </div>
+                <div class="input-group" style="margin-bottom:5px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="msg" type="text" class="form-control" name="msg" ng-model="encrypt.Data">
+                </div>
+                <div class="input-group" style="margin-bottom:5px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" onclick="$(this).select()" value="{{ encrypOutput }}" class="form-control" />
+                </div>
+                <div>
+                    <span ng-show="encryptForm.ddl_pj.$error.required">Select service</span>
+                </div>
+                <div class="input-group" style="margin-bottom:5px">
+                    <button type="button" ng-disabled="encryptForm.$invalid || isFalse() || dataIsNull()" class="btn btn-default btn-block" ng-click="encryp() ">encrypt</button>
                 </div>
             </div>
-            <div class="row col-sm-12"><input type="text" name="key" value="{{encrypt.key}}" class="form-control" disabled /></div>
-            <div class="row col-sm-12"><input type="text" name="vector" value="{{encrypt.vector}}" class="form-control" disabled /></div>
-            <div class="row col-sm-12"><input id="tainputEncrypt" class="form-control" ng-model="encrypt.Data" ng-change="encryp()"></div>
-        </div>
 
-        <div class="col-lg-9 col-sm-12">
-            <pre style="overflow:auto;margin-right:15px;margin-left:0px"> {{ encrypOutput }}</pre>                      
-        </div>
+           
+        </form>
     </div>
-
-
 
 
 
