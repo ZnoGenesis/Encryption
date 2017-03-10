@@ -44,5 +44,7 @@ namespace Encryption.Controllers
             var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
             return Json(System.Text.Encoding.UTF8.GetString(base64EncodedBytes), JsonRequestBehavior.AllowGet); 
         }
+
+       
     }
 }
