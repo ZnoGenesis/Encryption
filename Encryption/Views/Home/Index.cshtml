@@ -1,9 +1,24 @@
 ﻿<br />
 <div class="container" ng-app="App" ng-controller="homeCtrl">
 
-    <div class="row ">
-        <form name="encryptForm">
-            <div class="col-lg-3 col-sm-12">
+
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li><a data-toggle="tab" href="#menu1">เข้ารหัส</a></li>
+        <li><a data-toggle="tab" href="#menu2">ถอดรหัส</a></li>
+        <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h3>HOME</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <div id="menu1" class="tab-pane fade">
+            <br />
+            <form name="encryptForm">
 
                 <div class="input-group" style="margin-bottom:5px">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -24,130 +39,54 @@
                 </div>
                 <div class="input-group" style="margin-bottom:5px">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="msg" type="text" class="form-control" name="msg" ng-model="encrypt.Data">
+                    <input id="msg1" type="text" class="form-control" name="msg1" ng-model="encrypt.Data">
                 </div>
                 <div class="input-group" style="margin-bottom:5px">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                     <input type="text" onclick="$(this).select()" value="{{ encrypOutput }}" class="form-control" />
                 </div>
-                <div>
-                    <span ng-show="encryptForm.ddl_pj.$error.required">Select service</span>
+                <div class="input-group" style="margin-bottom:5px">
+                    <button type="button" class="btn btn-default btn-block" ng-click="encryp() ">encrypt</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="menu2" class="tab-pane fade">
+            <br />
+            <form name="decryptForm">
+                <div class="input-group" style="margin-bottom:5px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <div class="dropdown">
+                        <select class="form-control" name="ddl_pj" ng-model="decrypt" ng-options="x.name for x in pjx" required>
+                            <option value="">---Please select---</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group" style="margin-bottom:5px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" name="key" ng-model="decrypt.key" class="form-control" disabled required />
                 </div>
                 <div class="input-group" style="margin-bottom:5px">
-                    <button type="button" ng-disabled="encryptForm.$invalid || isFalse() || dataIsNull()" class="btn btn-default btn-block" ng-click="encryp() ">encrypt</button>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" name="vector" ng-model="decrypt.vector" class="form-control" disabled required />
                 </div>
-            </div>
 
-           
-        </form>
+                <div class="input-group" style="margin-bottom:5px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="msg2" type="text" class="form-control" name="msg2" ng-model="decrypt.Data" required>
+                </div>
+                <div class="input-group" style="margin-bottom:5px">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="text" onclick="$(this).select()" value="{{ decrypOutput }}" class="form-control" />
+
+                </div>
+                <div class="input-group" style="margin-bottom:5px">
+                    <button type="button" ng-disabled="decryptForm.msg2.$error.required" class="btn btn-default btn-block" ng-click="decryp() ">decrypt</button>
+                </div>
+            </form>
+
+        </div>
     </div>
-
-
-
-    @*<div class="row">
-
-            <div class="col-lg-4">
-                <label>Project</label>
-                <select ng-model="Project">
-                    <option ng-repeat="x in project" value="{{x.name}}">{{x.name}}</option>
-                </select>
-
-            </div>
-            <div class="col-lg-4">
-                <label>Key</label>
-                <select ng-model="encrypt.Key">
-                    <option ng-repeat="x in key" value="{{x.key}}">{{x.key}}</option>
-                </select>
-            </div>
-            <div class="col-lg-4">
-                <label>Vector</label>
-                <select ng-model="encrypt.Vector">
-                    <option ng-repeat="x in vector" value="{{x.key}}">{{x.key}}</option>
-                </select>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <textarea id="tainputEncrypt" cols="5" class="form-control" rows="5" ng-model="encrypt.Data" ng-change="encryp()"></textarea>
-            </div>
-
-            <div class="col-lg-8">
-                <textarea id="taoutputEncrypt" class="form-control" rows="5" ng-model="encrypOutput"></textarea>
-            </div>
-
-        </div>
-        {{encrypt}}
-        <br />
-        <hr />
-
-        <div class="row">
-
-            <div class="col-lg-4">
-                <label>Project</label>
-                <select ng-model="Project">
-                    <option ng-repeat="x in project" value="{{x.name}}">{{x.name}}</option>
-                </select>
-
-            </div>
-            <div class="col-lg-4">
-                <label>Key</label>
-                <select ng-model="objdecrypt.Key">
-                    <option ng-repeat="x in key" value="{{x.key}}">{{x.key}}</option>
-                </select>
-            </div>
-            <div class="col-lg-4">
-                <label>Vector</label>
-                <select ng-model="objdecrypt.Vector">
-                    <option ng-repeat="x in vector" value="{{x.key}}">{{x.key}}</option>
-                </select>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <textarea id="tainputDecrypt" cols="5" class="form-control" rows="5" ng-model="objdecrypt.data" ng-change="mydecrypt()"></textarea>
-            </div>
-
-            <div class="col-lg-8">
-                <textarea id="taoutputDecrypt" class="form-control" rows="5" ng-model="decrypOutput"></textarea>
-            </div>
-
-        </div>
-        {{decrypOutput}}
-        <br />
-        <hr />
-
-
-        <div class="row">
-            <div class="col-lg-6">
-
-                <fieldset>
-                    <legend>Encode:</legend>
-                    <div class="col-lg-6">
-                        <label>String</label>
-                        <input type="text" class="form-control" ng-model="encode_input" ng-change="converter.encode()" />
-                    </div>
-                    <div class="col-lg-6">
-                        <label>Base64</label>
-                        <input type="text" class="form-control" value="{{encode}}" />
-                    </div>
-                </fieldset>
-            </div>
-            <div class="col-lg-6">
-                <fieldset>
-                    <legend>Decode:</legend>
-                    <div class="col-lg-6">
-                        <label>Base64</label>
-                        <input type="text" class="form-control" ng-model="decode_input" ng-change="converter.decode()" />
-                    </div>
-                    <div class="col-lg-6">
-                        <label>String</label>
-                        <input type="text" class="form-control" value="{{decode}}" />
-                    </div>
-                </fieldset>
-            </div>
-
-        </div>*@
 </div>
 <script src="~/Scripts/Home/home.js"></script>
