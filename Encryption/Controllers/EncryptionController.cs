@@ -14,12 +14,22 @@ namespace Encryption.Controllers
         {
             return View();
         }
+
+        private LevelEncrypt getLevel(string level)
+        {
+            if (level == "3")
+                return LevelEncrypt.hard;
+            else if (level == "2")
+                return LevelEncrypt.medium;
+            else
+                return LevelEncrypt.low;
+        }
         [HttpPost]
         public ActionResult Encrypt(Encrypt encrypt)
         {
             GenericEncryption.key = encrypt.Key;
             GenericEncryption.vector = encrypt.Vector;
-            var output = GenericEncryption.Encrypt(encrypt.Data, LevelEncrypt.medium);
+            var output = GenericEncryption.Encrypt(encrypt.Data, getLevel(encrypt.level));
             return Json(output, JsonRequestBehavior.AllowGet);   
            
         }
@@ -28,7 +38,7 @@ namespace Encryption.Controllers
         {
             GenericEncryption.key = decrypt.Key;
             GenericEncryption.vector = decrypt.Vector;
-            var output = GenericEncryption.Decrypt(decrypt.Data, LevelEncrypt.medium);
+            var output = GenericEncryption.Decrypt(decrypt.Data, getLevel(decrypt.level));
             return Json(output, JsonRequestBehavior.AllowGet);   
         }
         [HttpPost]

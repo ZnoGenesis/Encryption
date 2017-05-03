@@ -344,3 +344,10 @@ table.checkboxStyle td input[type="checkbox"] {
   background: gold;
   overflow-wrap: break-word;
 }
+
+divx{
+  height:50px;
+  width:300px;
+  background-color:green;}
+
+divx input{width: 100%;height: 100%;}
