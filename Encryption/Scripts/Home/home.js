@@ -28,7 +28,22 @@ app.controller("homeCtrl", function ($scope, $http) {
             })
         }
     }
-
+    function getLevel() {
+        var list = [
+            {
+                level: 1,
+                name: 'LOW'
+            },
+            {
+                level: 2,
+                name: 'MD'
+            },
+            {
+                level: 1,
+                name: 'HD'
+            },
+        ]
+    }
     function getDropdown() {
         var list = [
             {
@@ -48,14 +63,20 @@ app.controller("homeCtrl", function ($scope, $http) {
                 name: 'Backoffice',
                 key: "Q29ubmV4Nzg=",
                 vector: "TXVuZXo2Nzg="
+            },{
+                id: 4,
+                name: 'HSH',
+                key: "Q29ubmV4Nzg=",
+                vector:"TXVuZXo2Nzg="
             }
         ]
         return list
     }
     $scope.pj = getDropdown()
     $scope.pjx = getDropdown()
+    $scope.level = getLevel()
     $scope.encryp = function () {
-        console.log($scope.encrypt);
+        console.log('->',$scope.encrypt);
         $http.post("/Encryption/Encrypt", $scope.encrypt)
             .success(function (response) {
                 $scope.encrypOutput = response;
